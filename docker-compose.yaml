@@ -1,0 +1,24 @@
+---
+services:
+  microservice:
+    build:
+      context: "."
+      dockerfile: ./Dockerfile
+    depends_on:
+      - microservice-db
+    env_file:
+      - ./.env
+    ports:
+      - "8080:8080"
+  microservice-db:
+    environment:
+      - MONGO_INITDB_DATABASE=service
+    image: "mongo:latest"
+    logging:
+      driver: none
+    ports:
+      - "27017:27017"
+    restart: always
+    volumes:
+      - "./tools/mongodb/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro"
+version: "3.9"

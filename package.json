@@ -1,0 +1,15 @@
+{
+  "name": "go-http-micro",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "docker-compose up",
+    "build": "docker-compose build",
+    "e2e": "playwright test",
+    "lint": "go vet ./...",
+    "format": "prettier --write . && go fmt ./..."
+  },
+  "dependencies": {
+    "@playwright/test": "1.21.1",
+    "prettier": "2.6.2"
+  }
+}

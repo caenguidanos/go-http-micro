@@ -1,4 +1,15 @@
-node_modules
-coverage
-dist
+# dependencies
 go.sum
+node_modules
+
+# testing
+coverage
+
+# build
+dist
+
+# pnpm
+pnpm-lock.yaml
+
+# log
+*.log

@@ -2,29 +2,14 @@ package mongodb
 
 import (
 	"context"
-	"log"
 	"net/http"
 	"time"
 
-	"microservice/pkg/domain"
+	"ecommerce-template/apps/microservice/auth/credential/pkg/domain"
 
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
-	"go.mongodb.org/mongo-driver/mongo/options"
 )
-
-func Connect(uri string) *mongo.Client {
-	c, err := mongo.Connect(
-		context.Background(),
-		options.Client().ApplyURI(uri).SetServerAPIOptions(options.ServerAPI(options.ServerAPIVersion1)),
-	)
-
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	return c
-}
 
 type mongodbAdapter struct {
 	conn *mongo.Client

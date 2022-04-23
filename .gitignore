@@ -1,3 +1,16 @@
+# dependencies
 go.sum
-pnpm-lock.yaml
 node_modules
+
+# testing
+coverage
+
+# build
+dist
+
+# pnpm
+pnpm-lock.yaml
+
+# log
+*.log
+

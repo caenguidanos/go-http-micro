@@ -1,4 +1,4 @@
-FROM golang:alpine as build
+FROM golang:1.18-alpine as build
 WORKDIR /go/src/app
 ADD . /go/src/app
 RUN go get -d -v ./...
